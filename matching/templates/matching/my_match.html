@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <p> Here are five people who also took the same test as you did. They are randomly chosen from the list of people who took the test. </p>
+    <p> Please guess how well they scored. You will get INR 100 for every correct guess. </p>
+{% endblock %}
+
+{% block content %}
+
+    {% next_button %}
+
+{% endblock %}

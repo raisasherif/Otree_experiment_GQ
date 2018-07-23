@@ -22,14 +22,6 @@ class Question(Page):
         self.player.check_correct()
         self.player.calc_current_score()
 
-class Welcome(Page):
-    pass
-
-class Consent(Page):
-    pass
-
-class Description(Page):
-    pass
 
 class Results(Page):
     def is_displayed(self):
