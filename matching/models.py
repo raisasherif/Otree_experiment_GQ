@@ -14,7 +14,7 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'matching'
     players_per_group = None
-    num_rounds = 5
+    num_rounds = 1
 
     with open('matching/student_data.csv') as student_data:
         students = list(csv.DictReader(student_data))
@@ -22,14 +22,14 @@ class Constants(BaseConstants):
 class Subsession(BaseSubsession):
     def creating_session(self):
         for p in self.get_players():
+            print('new player')
             randomized_students = random.sample(Constants.students, len(Constants.students))
-            #p.participant.vars['questions'] = Constants.questions
-            p.participant.vars['students'] = randomized_students
-            student_data = p.current_student()
-            p.age = int(student_data['id'])
-            p.question = question_data['question']
-            p.solution = question_data['solution']
-            #Have the choices here
+            p.participant.vars['all_students'] = randomized_students
+            p.participant.vars['selected_students'] = p.select_students()
+            print('sdsdsdsdsds')
+            print(p.participant.vars)
+            # p.age = int(student_data['id'])
+            # print(p.age)
 
 
 
@@ -46,5 +46,6 @@ class Player(BasePlayer):
     #submitted_answer = models.StringField(widget=widgets.RadioSelect)
     #is_correct = models.BooleanField()
 
-    def current_student(self):
-        return self.participant.vars['students'][self.round_number - 1]
+    def select_students(self):
+        print( [self.participant.vars['all_students'][i] for i in range(0,5)])
+        return [self.participant.vars['all_students'][i] for i in range(0,5)]

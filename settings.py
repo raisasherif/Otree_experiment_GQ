@@ -20,7 +20,12 @@ SESSION_CONFIGS = [
     {
         'name': 'raisa_quisss',
         'num_demo_participants': 1,
-        'app_sequence': ['introduction','quiz'],
+        'app_sequence': ['introduction','quiz', 'matching'],
+    },
+    {
+        'name': 'Matching_Only',
+        'num_demo_participants': 1,
+        'app_sequence': ['matching'],
     },
     {
         'name': 'my_simple_survey',
