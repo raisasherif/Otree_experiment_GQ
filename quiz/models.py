@@ -28,13 +28,15 @@ class Constants(BaseConstants):
 class Subsession(BaseSubsession):
     def creating_session(self):
         for p in self.get_players():
-            # randomized_questions = random.sample(Constants.questions, len(Constants.questions))
-            p.participant.vars['questions'] = Constants.questions
-            # p.participant.vars['questions'] = randomized_questions
+            randomized_questions = random.sample(Constants.questions, len(Constants.questions))
+            print(Constants.questions, randomized_questions)
+            #p.participant.vars['questions'] = Constants.questions
+            p.participant.vars['questions'] = randomized_questions
             question_data = p.current_question()
             p.question_id = int(question_data['id'])
             p.question = question_data['question']
             p.solution = question_data['solution']
+            #Have the choices here
 
 
 class Group(BaseGroup):

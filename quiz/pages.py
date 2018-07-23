@@ -20,14 +20,6 @@ class Question(Page):
     def before_next_page(self):
         self.player.check_correct()
 
-class Welcome(Page):
-    pass
-
-class Consent(Page):
-    pass
-
-class Description(Page):
-    pass
 
 class Results(Page):
     def is_displayed(self):
