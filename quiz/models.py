@@ -28,13 +28,18 @@ class Constants(BaseConstants):
 class Subsession(BaseSubsession):
     def creating_session(self):
         for p in self.get_players():
-            # randomized_questions = random.sample(Constants.questions, len(Constants.questions))
-            p.participant.vars['questions'] = Constants.questions
-            # p.participant.vars['questions'] = randomized_questions
+            if self.round_number == 1:
+                randomized_questions = random.sample(Constants.questions, len(Constants.questions))
+                p.participant.vars['questions'] = randomized_questions
+
             question_data = p.current_question()
             p.question_id = int(question_data['id'])
             p.question = question_data['question']
             p.solution = question_data['solution']
+            p.choice_1 = question_data['choice1']
+            p.choice_2 = question_data['choice2']
+            p.choice_3 = question_data['choice3']
+            p.choice_4 = question_data['choice4']
 
 
 class Group(BaseGroup):
@@ -43,6 +48,10 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     question_id = models.IntegerField()
     question = models.StringField()
+    choice_1 = models.StringField()
+    choice_2 = models.StringField()
+    choice_3 = models.StringField()
+    choice_4 = models.StringField()
     solution = models.StringField()
     submitted_answer = models.StringField(widget=widgets.RadioSelect)
     is_correct = models.BooleanField()
@@ -52,3 +61,4 @@ class Player(BasePlayer):
 
     def check_correct(self):
         self.is_correct = (self.submitted_answer == self.solution)
+
