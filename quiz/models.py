@@ -53,6 +53,7 @@ class Player(BasePlayer):
     choice_3 = models.StringField()
     choice_4 = models.StringField()
     solution = models.StringField()
+    current_score = models.IntegerField(min=0, max=5, initial=0)
     submitted_answer = models.StringField(widget=widgets.RadioSelect)
     is_correct = models.BooleanField()
 
@@ -62,3 +63,6 @@ class Player(BasePlayer):
     def check_correct(self):
         self.is_correct = (self.submitted_answer == self.solution)
 
+    def calc_current_score(self):
+        player_in_all_rounds = self.in_all_rounds()
+        self.current_score = sum([p.is_correct for p in player_in_all_rounds])

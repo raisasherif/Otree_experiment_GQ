@@ -17,11 +17,10 @@ class Question(Page):
             self.player.choice_4
         ]
 
-    # def vars_for_template(self):
-    #     return {'question': self.player.question}
 
     def before_next_page(self):
         self.player.check_correct()
+        self.player.calc_current_score()
 
 class Welcome(Page):
     pass
@@ -42,6 +41,10 @@ class Results(Page):
             'player_in_all_rounds': player_in_all_rounds,
             'questions_correct': sum([p.is_correct for p in player_in_all_rounds])
         }
+
+    def before_next_page(self):
+        print(self.player.current_score)
+        self.participant.vars['test_1_score'] = self.player.current_score
 
 page_sequence = [
     Question,
