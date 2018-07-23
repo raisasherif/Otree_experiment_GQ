@@ -9,16 +9,18 @@ class Question(Page):
     form_fields = ['submitted_answer']
 
     def submitted_answer_choices(self):
-        qd = self.player.current_question()
+
         return [
-            qd['choice1'],
-            qd['choice2'],
-            qd['choice3'],
-            qd['choice4'],
+            self.player.choice_1,
+            self.player.choice_2,
+            self.player.choice_3,
+            self.player.choice_4
         ]
+
 
     def before_next_page(self):
         self.player.check_correct()
+        self.player.calc_current_score()
 
 
 class Results(Page):
@@ -31,6 +33,10 @@ class Results(Page):
             'player_in_all_rounds': player_in_all_rounds,
             'questions_correct': sum([p.is_correct for p in player_in_all_rounds])
         }
+
+    def before_next_page(self):
+        print(self.player.current_score)
+        self.participant.vars['test_1_score'] = self.player.current_score
 
 page_sequence = [
     Question,

@@ -19,7 +19,7 @@ SESSION_CONFIGS = [
     },
     {
         'name': 'raisa_quisss',
-        'num_demo_participants': 2,
+        'num_demo_participants': 1,
         'app_sequence': ['introduction','quiz'],
     },
     {
