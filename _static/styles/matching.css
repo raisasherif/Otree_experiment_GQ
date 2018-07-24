@@ -1,0 +1,37 @@
+#grid {
+    display: grid;
+    height: 300px;
+    grid-template-columns: 15% repeat(5, 17%);
+    grid-template-rows: 280px;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.student-title {
+    font-weight: bold;
+    background-color: aliceblue;
+    border-radius: 100px;
+}
+
+.grid-header-col {
+    font-weight: bold;
+}
+
+.grid-header-col .grid-row-content {
+    margin-bottom: 1rem;
+}
+
+.grid-item {
+    background-color: #80cbc4;
+    border: 1px solid #fff;
+    padding: 20px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.form-control {
+    display: inline-block;
+}
+
