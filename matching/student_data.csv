@@ -1,21 +1,21 @@
-id,branch,institute,age,state,language,score,date_of_test
-1,CS,IITG,18,Kerala,Malayalam,18,12 August 2018
-2,EE,IITG,18,Tamil Nadu,Tamil,5,12 August 2018
-3,ME,IITG,18,Maharashtra,Malayalam,18,12 August 2018
-4,NA,IITG,18,Goa,Tamil,5,12 August 2018
-5,BT,IITG,18,Karnataka,Kannada,18,12 August 2018
-6,CE,IITG,18,Gujarat,Gujarati,5,12 August 2018
-7,CS,IITG,18,Andhra Pradesh,Telugu,18,12 August 2018
-8,EE,IITG,18,Kerala,Tamil,11,12 August 2018
-9,CS,IITG,18,Bihar,Hindi,15,12 August 2018
-10,CE,IITG,18,Kerala,Malayalam,8,12 August 2018
-11,CE,IITG,18,Tamil Nadu,Tamil,2,12 August 2018
-12,NA,IITG,18,Kerala,Malayalam,0,12 August 2018
-13,ME,IITG,18,Tamil Nadu,Tamil,7,12 August 20181
-14,ME,IITG,18,West Bengal,Bengali,12,12 August 2018
-15,BT,IITG,18,UP,Hindi,10,12 August 2018
-16,BT,IITG,18,Bihar,Hindi,17,12 August 2018
-17,ChE,IITG,18,UP,HIndi,20,12 August 2018
-18,ChE,IITG,18,Tamil Nadu,Tamil,5,12 August 2018
-19,CS,IITG,18,Kerala,Malayalam,18,12 August 2018
-20,EE,IITG,18,Bihar,Hindi,15,12 August 2018
+id,branch,institute,age,state,language,score,date_of_test,gender
+1,CS,IITG,18,Kerala,Malayalam,18,12 August 2018,Male
+2,EE,IITG,18,Tamil Nadu,Tamil,5,12 August 2018,Female
+3,ME,IITG,18,Maharashtra,Malayalam,18,12 August 2018,Male
+4,NA,IITG,18,Goa,Tamil,5,12 August 2018,Female
+5,BT,IITG,18,Karnataka,Kannada,18,12 August 2018,Male
+6,CE,IITG,18,Gujarat,Gujarati,5,12 August 2018,Female
+7,CS,IITG,18,Andhra Pradesh,Telugu,18,12 August 2018,Male
+8,EE,IITG,18,Kerala,Tamil,11,12 August 2018,Female
+9,CS,IITG,18,Bihar,Hindi,15,12 August 2018,Male
+10,CE,IITG,18,Kerala,Malayalam,8,12 August 2018,Female
+11,CE,IITG,18,Tamil Nadu,Tamil,2,12 August 2018,Male
+12,NA,IITG,18,Kerala,Malayalam,0,12 August 2018,Female
+13,ME,IITG,18,Tamil Nadu,Tamil,7,12 August 2018,Male
+14,ME,IITG,18,West Bengal,Bengali,12,12 August 2018,Female
+15,BT,IITG,18,UP,Hindi,10,12 August 2018,Male
+16,BT,IITG,18,Bihar,Hindi,17,12 August 2018,Female
+17,ChE,IITG,18,UP,HIndi,20,12 August 2018,Male
+18,ChE,IITG,18,Tamil Nadu,Tamil,5,12 August 2018,Female
+19,CS,IITG,18,Kerala,Malayalam,18,12 August 2018,Male
+20,EE,IITG,18,Bihar,Hindi,15,12 August 2018,Female

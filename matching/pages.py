@@ -8,6 +8,7 @@ class my_match(Page):
     form_fields = ['prediction_1','prediction_2','prediction_3','prediction_4','prediction_5']
 
     def vars_for_template(self):
+        print(self.participant.vars['selected_students'])
         return {
             'students': self.participant.vars['selected_students'],
         }

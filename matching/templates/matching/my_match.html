@@ -20,7 +20,7 @@
         <p class="grid-row-headers">ID:</p>
         <p class="grid-row-headers">Age:</p>
         <p class="grid-row-headers">Language:</p>
-        <p class="grid-row-headers">State:</p>
+        <p class="grid-row-headers">Gender:</p>
         <p class="grid-row-headers">Prediction:</p>
     </div>
     {% for s in students %}
@@ -29,7 +29,13 @@
         <p class="grid-row-content">{{ s.id }}</p>
         <p class="grid-row-content">{{ s.age }}</p>
         <p class="grid-row-content">{{ s.language }}</p>
-        <p class="grid-row-content">{{ s.state }}</p>
+        <p class="grid-row-content">{{ s.gender }}
+        {% if s.gender == 'Male' %}
+            <img src="{% static "images/male.png" %}"/>
+        {% else %}
+            <img src="{% static "images/woman.png" %}"/>
+        {% endif %}
+        </p>
         {% if forloop.counter == 1 %}
             {% formfield player.prediction_1 %}
         {% elif forloop.counter == 2 %}
