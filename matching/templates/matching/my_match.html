@@ -1,6 +1,11 @@
 {% extends "global/Page.html" %}
 {% load otree static %}
 
+
+{% comment %}
+static refers to static folder in project. Reference any files from there
+just like the file below.
+{% endcomment %}
 {% block styles %}
     <link href="{% static "/styles/matching.css" %}" rel="stylesheet">
 {% endblock %}
@@ -14,7 +19,9 @@
 <p> Please guess how well they scored. You will get INR 100 for every correct guess. </p>
 
 <div id="grid">
-
+    {% comment %}
+    This is the first column with the row headers below
+    {% endcomment %}
     <div class="grid-item grid-header-col">
         <p class="grid-row-headers">Student:</p>
         <p class="grid-row-headers">ID:</p>
@@ -23,19 +30,34 @@
         <p class="grid-row-headers">Gender:</p>
         <p class="grid-row-headers">Prediction:</p>
     </div>
+    {% comment %}
+    We have to loop through the students object and populate the rows with the
+    information we want. If you want to show more rows and there is a styling problem,
+    then adjust #grid styling in styles sheet to have a larger height
+    {% endcomment %}
     {% for s in students %}
     <div class="grid-item" id="item{{forloop.counter}}">
+        {% comment %}
+        forloop.counter is 1-index based and gives current iteration
+        {% endcomment %}
         <p class="student-title grid-row-content">Student {{forloop.counter}}</p>
         <p class="grid-row-content">{{ s.id }}</p>
         <p class="grid-row-content">{{ s.age }}</p>
         <p class="grid-row-content">{{ s.language }}</p>
         <p class="grid-row-content">{{ s.gender }}
+        {% comment %}
+        Checks if gender is male or female and loads corresponding icon
+        {% endcomment %}
         {% if s.gender == 'Male' %}
             <img src="{% static "images/male.png" %}"/>
         {% else %}
             <img src="{% static "images/woman.png" %}"/>
         {% endif %}
         </p>
+        {% comment %}
+        We must have this lengthy if statement here to properly link the
+        input box to the current variable.
+        {% endcomment %}
         {% if forloop.counter == 1 %}
             {% formfield player.prediction_1 %}
         {% elif forloop.counter == 2 %}
@@ -52,5 +74,12 @@
 </div>
 
     {% next_button %}
+
+{% comment %}
+This is to credit the website with the icons.
+{% endcomment %}
+<div id="icon-credit">
+Icons made by Pixel perfect from www.flaticon.com licensed by CC 3.0 BY
+</div>
 
 {% endblock %}
